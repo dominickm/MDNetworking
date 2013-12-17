@@ -8,11 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-#define MDNETWORKING_HTTP_POST @"POST"
-#define MDNETWORKING_HTTP_GET @"GET"
-#define MDNETWORKING_HTTP_PUT @"PUT"
-#define MDNETWORKING_HTTP_DELETE @"DELETE"
+typedef NS_ENUM(NSUInteger, MDHTTPCode) {
+    kHTTPGet,
+    kHTTPPost,
+    kHTTPPut,
+    kHTTPDelete,
+};
+
 
 @interface MDNetworking : NSObject
+
++ (NSString *)stringForMDHTTPCode:(MDHTTPCode)httpCode;
+
 
 @end
