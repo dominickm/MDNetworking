@@ -16,6 +16,8 @@
 		4C6FDDD81860DF4700387951 /* libMDNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6FDDC01860DF4600387951 /* libMDNetworking.a */; };
 		4C6FDDDE1860DF4700387951 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C6FDDDC1860DF4700387951 /* InfoPlist.strings */; };
 		4C6FDDE01860DF4700387951 /* MDNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FDDDF1860DF4700387951 /* MDNetworkingTests.m */; };
+		4C6FDDEB1860DF6500387951 /* MDURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FDDEA1860DF6500387951 /* MDURL.m */; };
+		4C6FDDEE1860E05700387951 /* MDURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FDDED1860E05700387951 /* MDURLRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		4C6FDDDB1860DF4700387951 /* MDNetworkingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MDNetworkingTests-Info.plist"; sourceTree = "<group>"; };
 		4C6FDDDD1860DF4700387951 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C6FDDDF1860DF4700387951 /* MDNetworkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDNetworkingTests.m; sourceTree = "<group>"; };
+		4C6FDDE91860DF6500387951 /* MDURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDURL.h; sourceTree = "<group>"; };
+		4C6FDDEA1860DF6500387951 /* MDURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDURL.m; sourceTree = "<group>"; };
+		4C6FDDEC1860E05700387951 /* MDURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDURLRequest.h; sourceTree = "<group>"; };
+		4C6FDDED1860E05700387951 /* MDURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDURLRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,10 @@
 				4C6FDDC81860DF4600387951 /* MDNetworking.h */,
 				4C6FDDCA1860DF4600387951 /* MDNetworking.m */,
 				4C6FDDC61860DF4600387951 /* Supporting Files */,
+				4C6FDDE91860DF6500387951 /* MDURL.h */,
+				4C6FDDEC1860E05700387951 /* MDURLRequest.h */,
+				4C6FDDED1860E05700387951 /* MDURLRequest.m */,
+				4C6FDDEA1860DF6500387951 /* MDURL.m */,
 			);
 			path = MDNetworking;
 			sourceTree = "<group>";
@@ -224,6 +234,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C6FDDEE1860E05700387951 /* MDURLRequest.m in Sources */,
+				4C6FDDEB1860DF6500387951 /* MDURL.m in Sources */,
 				4C6FDDCB1860DF4600387951 /* MDNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
