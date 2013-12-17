@@ -7,8 +7,32 @@
 //
 
 #import "MDURLRequest.h"
+#import "MDURL.h"
 
 @implementation MDURLRequest
+
+#pragma mark Inits
+
++ (MDURLRequest *)requestWithURL:(id)url andHTTPType :(NSString *)httpType
+{
+    MDURLRequest* req = [[MDURLRequest alloc] init];
+    
+    if ([url isKindOfClass:[MDURLRequest class]])
+    {
+        req = [MDURLRequest requestWithURL:url];
+    }
+    else if ([url isKindOfClass:[NSString class]])
+    {
+        req = [MDURLRequest requestWithURL:[MDURL URLWithString:url]];
+    }
+    
+    if (httpType)
+    {
+        req.HTTPMethod = httpType;
+    }
+    
+    return req;
+}
 
 - (void)startAsynchWithSuccess:(void (^)(NSURLResponse*, NSData*, NSError* ))completition
 {

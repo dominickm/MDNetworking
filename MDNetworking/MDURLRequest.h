@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MDURLRequest : NSURLRequest
+@interface MDURLRequest : NSMutableURLRequest
+
++ (MDURLRequest *)requestWithURL:(id)url andHTTPType:(NSString *)httpType;
 
 - (void)startAsynchWithSuccess:(void (^)(NSURLResponse* response, NSData* data, NSError* connectionError))completition;
 
