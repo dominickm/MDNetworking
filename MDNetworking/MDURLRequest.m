@@ -10,4 +10,10 @@
 
 @implementation MDURLRequest
 
+- (void)startAsynchWithSuccess:(void (^)(NSURLResponse*, NSData*, NSError* ))completition
+{
+    [NSURLConnection sendAsynchronousRequest:self queue:[NSOperationQueue mainQueue] completionHandler:completition];
+}
+
 @end
+

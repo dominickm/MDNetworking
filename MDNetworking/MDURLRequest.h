@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MDURLRequest : NSURL
+@interface MDURLRequest : NSURLRequest
+
+- (void)startAsynchWithSuccess:(void (^)(NSURLResponse* response, NSData* data, NSError* connectionError))completition;
 
 @end
