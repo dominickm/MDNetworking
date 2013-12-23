@@ -14,7 +14,7 @@
 
 + (MDURL *)urlFromExtention:(NSString *)extention offOfBase:(NSString *)base
 {
-    NSString* fullURLString = [extention stringByAppendingString:base];
+    NSString* fullURLString = [base stringByAppendingString:extention];
     
     return [MDURL URLWithString:fullURLString];
 }
