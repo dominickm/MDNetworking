@@ -9,6 +9,7 @@
 #import "MDURLRequest.h"
 #import "MDURL.h"
 #import "MDNetworking.h"
+#import "NSData+Base64.h"
 
 @implementation MDURLRequest
 
@@ -58,7 +59,10 @@
     NSString* basicAuthString = [NSString stringWithFormat:@"%@:%@", username, password];
     NSData* data = [basicAuthString dataUsingEncoding:NSUTF8StringEncoding];
     NSString* base64String = [data base64EncodedStringWithOptions:0];
-    [req setValue:base64String forHTTPHeaderField:@"Authorization"];
+    NSString* authString = [NSString stringWithFormat:@"Basic %@", base64String];
+    [req addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [req addValue:authString forHTTPHeaderField:@"Authorization"];
+    [req addValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
     return req;
 }
