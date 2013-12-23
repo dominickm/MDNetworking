@@ -41,7 +41,7 @@
 {
     MDURLRequest* req = [[MDURLRequest alloc] init];
     
-    if ([url isKindOfClass:[MDURLRequest class]])
+    if ([url isKindOfClass:[MDURL class]])
     {
         req = [MDURLRequest requestWithURL:url];
     }
@@ -56,7 +56,9 @@
     }
     
     NSString* basicAuthString = [NSString stringWithFormat:@"%@:%@", username, password];
-    [req setValue:basicAuthString forHTTPHeaderField:@"Authorization"];
+    NSData* data = [basicAuthString dataUsingEncoding:NSUTF8StringEncoding];
+    NSString* base64String = [data base64EncodedStringWithOptions:0];
+    [req setValue:base64String forHTTPHeaderField:@"Authorization"];
     
     return req;
 }
