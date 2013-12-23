@@ -8,12 +8,13 @@
 
 #import "MDURLRequest.h"
 #import "MDURL.h"
+#import "MDNetworking.h"
 
 @implementation MDURLRequest
 
 #pragma mark Inits
 
-+ (MDURLRequest *)requestWithURL:(id)url andHTTPType :(NSString *)httpType
++ (MDURLRequest *)requestWithURL:(id)url andHTTPCode:(MDHTTPCode)httpCode
 {
     MDURLRequest* req = [[MDURLRequest alloc] init];
     
@@ -26,9 +27,9 @@
         req = [MDURLRequest requestWithURL:[MDURL URLWithString:url]];
     }
     
-    if (httpType)
+    if (httpCode)
     {
-        req.HTTPMethod = httpType;
+        req.HTTPMethod = [MDNetworking stringForMDHTTPCode:httpCode];
     }
     
     return req;
@@ -36,7 +37,7 @@
 
 // Init with HTTP Auth
 
-+ (MDURLRequest *)requestWithURL:(id)url HTTPType:(NSString *)httpType Username:(NSString *)username andPassword:(NSString *)password
++ (MDURLRequest *)requestWithURL:(id)url HTTPCode:(MDHTTPCode)httpCode Username:(NSString *)username andPassword:(NSString *)password
 {
     MDURLRequest* req = [[MDURLRequest alloc] init];
     
@@ -49,9 +50,9 @@
         req = [MDURLRequest requestWithURL:[MDURL URLWithString:url]];
     }
     
-    if (httpType)
+    if (httpCode)
     {
-        req.HTTPMethod = httpType;
+        req.HTTPMethod = [MDNetworking stringForMDHTTPCode:httpCode];
     }
     
     NSString* basicAuthString = [NSString stringWithFormat:@"%@:%@", username, password];
