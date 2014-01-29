@@ -9,7 +9,6 @@
 #import "MDURLRequest.h"
 #import "MDURL.h"
 #import "MDNetworking.h"
-#import "NSData+Base64.h"
 
 @implementation MDURLRequest
 
