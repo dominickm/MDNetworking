@@ -18,7 +18,8 @@
 {
     MDURLRequest* req = [[MDURLRequest alloc] init];
     
-    if ([url isKindOfClass:[MDURLRequest class]])
+    if ([url isKindOfClass:[MDURLRequest class]]
+        || [url isKindOfClass:[NSURL class]])
     {
         req = [MDURLRequest requestWithURL:url];
     }
