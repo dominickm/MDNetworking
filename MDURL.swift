@@ -11,6 +11,6 @@ import Cocoa
 class MDURL: NSURL {
     // Extension is a keyword
     class func urlFromExtension(anExtension:String, offOfBase base:String)->(MDURL) {
-        return MDURL.URLWithString(base + anExtention)
+        return MDURL.URLWithString(base + anExtension)
     }
 }

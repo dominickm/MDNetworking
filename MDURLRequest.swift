@@ -9,39 +9,27 @@
 import Cocoa
 
 class MDURLRequest: NSMutableURLRequest {
-    class func requestWithURL(url:id, andHTTPCode httpCode:MDHTTPCode) -> (MDURLRequest) {
-        req = MDURLRequest()
-        
-        if url is MDURL || url is NSURL {
-            req = MDURLRequest.requestWithURL(url)
-        } else if url is String {
-            req = MDURLReques.requestWithURL(MDURL(url))
-        }
+    class func requestWithURL(url:MDURL, andHTTPCode httpCode:MDHTTPCode? = nil) -> (MDURLRequest) {
+        var req = MDURLRequest(URL: url)
         
         if httpCode {
-            req.HTTPMethod = MDNetworking.stringForMDHTTPCode(httpCode)
+            req.HTTPMethod = MDNetworking.stringForMDHTTPCode(httpCode!)
         }
         
         return req
     }
     
-    class func requestWithURL(url:id, andHTTPCode httpCode:MDHTTPCode, andUsername username:String, andPassword password:String) -> (MDURLRequest) {
-        req = MDURLRequest()
-        
-        if url is MDURL || url is NSURL {
-            req = MDURLRequest.requestWithURL(url)
-        } else if url is String {
-            req = MDURLRequest.requestWithURL(MDURL.URLWithString(url))
-        }
+    class func requestWithURL(url:MDURL, andHTTPCode httpCode:MDHTTPCode? = nil, andUsername username:String, andPassword password:String) -> (MDURLRequest) {
+        var req = MDURLRequest(URL: url)
         
         if httpCode {
-            req.HTTPMethod = MDNetworking.stringForMDHTTPCode(httpCode)
+            req.HTTPMethod = MDNetworking.stringForMDHTTPCode(httpCode!)
         }
         
-        basicAuthString = username + ":" + password
-        data = basicAuthString.dataUsingEncoding(NSUTF8StringEncoding)
-        base64String = data.base64EncodedStringWithOptions(0)
-        authString = "Basic " + base64String
+        var basicAuthString = username + ":" + password
+        var data = NSData(data: basicAuthString.dataUsingEncoding(NSUTF8StringEncoding))
+        var base64String = data.base64EncodedStringWithOptions(nil)
+        var authString = "Basic " + base64String
         
         req.addValue("application/json", forHTTPHeaderField:"Content-Type")
         req.addValue("application/json", forHTTPHeaderField:"Accept")
@@ -50,8 +38,8 @@ class MDURLRequest: NSMutableURLRequest {
         return req
     }
     
-    func startAsynchWithSuccess(completion:(NSURLResponse, NSData, NSError)->()) {
-        NSURLConnection.sendAsynchronousRequest(self, queue:NSOperationQueue.mainQueue, completionHandler:completion)
+    func startAsynchWithSuccess(completion:(NSURLResponse?, NSData?, NSError?)->()) {
+        NSURLConnection.sendAsynchronousRequest(self, queue:NSOperationQueue.mainQueue(), completionHandler:completion)
     }
 
 }
