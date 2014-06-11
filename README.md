@@ -10,4 +10,8 @@ MDNetworking is a small [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.html
 I'm open and welcome contributions from the community, however, any contributions that don't adhere to the present code-style will be rejected. 
 
 ##Installation
-Copy over the MDNetworking folder to your Swift-powered project in Xcode and serve at room temperature. 
+Copy over the contents of the MDNetworking folder into your project folder and add files in Xcode. Serve at room temperature. 
+
+
+
+*As of June 10th, 2014 the Xcode 6 Beta requires you physically add the .swift files to the same directory your project code is in then manually add it to your Xcode project. You cannot just drop references into the Xcode Project*
