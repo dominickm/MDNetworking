@@ -3,7 +3,7 @@
 //  MDNetworking
 //
 //  Created by Zane Swafford on 6/10/14.
-//  Made with love in Kansas
+//  Made with ❤︎ in Kansas
 //
 
 import Foundation
