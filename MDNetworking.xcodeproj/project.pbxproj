@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		2F76C1A41947EE2C00FBFA3D /* MDNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDNetworking.swift; sourceTree = "<group>"; };
-		2F76C1A51947EE2C00FBFA3D /* MDURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDURL.swift; sourceTree = "<group>"; };
-		2F76C1A61947EE2C00FBFA3D /* MDURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDURLRequest.swift; sourceTree = "<group>"; };
 		2F76C1A71947EE2C00FBFA3D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2F76C1C71947F62300FBFA3D /* MDNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDNetworking.swift; sourceTree = "<group>"; };
+		2F76C1C81947F62300FBFA3D /* MDURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDURL.swift; sourceTree = "<group>"; };
+		2F76C1C91947F62300FBFA3D /* MDURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDURLRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		2F76C19D1947EDF900FBFA3D = {
 			isa = PBXGroup;
 			children = (
-				2F76C1A41947EE2C00FBFA3D /* MDNetworking.swift */,
-				2F76C1A51947EE2C00FBFA3D /* MDURL.swift */,
-				2F76C1A61947EE2C00FBFA3D /* MDURLRequest.swift */,
+				2F76C1C61947F62300FBFA3D /* MDNetworking */,
 				2F76C1A71947EE2C00FBFA3D /* README.md */,
 			);
+			sourceTree = "<group>";
+		};
+		2F76C1C61947F62300FBFA3D /* MDNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				2F76C1C71947F62300FBFA3D /* MDNetworking.swift */,
+				2F76C1C81947F62300FBFA3D /* MDURL.swift */,
+				2F76C1C91947F62300FBFA3D /* MDURLRequest.swift */,
+			);
+			path = MDNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
