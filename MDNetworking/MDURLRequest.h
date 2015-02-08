@@ -17,4 +17,6 @@
 
 - (void)startAsynchWithSuccess:(void (^)(NSURLResponse* response, NSData* data, NSError* connectionError))completition;
 
+- (void)appendingPostValues:(NSDictionary *)postValues;
+
 @end

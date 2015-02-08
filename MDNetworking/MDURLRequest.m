@@ -72,6 +72,26 @@
     [NSURLConnection sendAsynchronousRequest:self queue:[NSOperationQueue mainQueue] completionHandler:completition];
 }
 
+#pragma mark Post Values
+
+- (void)appendingPostValues:(NSDictionary *)postValues
+{
+    NSString* paramsString = [[NSString alloc] init];
+    for (int i = 0; i < [postValues.allKeys count]; i++)
+    {
+        if (i == 0)
+        {
+            paramsString = [NSString stringWithFormat:@"%@=%@", postValues.allKeys[i], [postValues objectForKey:postValues.allKeys[i]]];
+        }
+        else
+        {
+            NSString* paramToAdd = [NSString stringWithFormat:@"&%@=%@", postValues.allKeys[i], [postValues objectForKey:postValues.allKeys[i]]];
+            paramsString = [paramsString stringByAppendingString:paramToAdd];
+        }
+    }
+    [self setHTTPBody:[paramsString dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
 
 @end
 
